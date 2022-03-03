@@ -5,21 +5,48 @@ import Image from "next/image";
 import PublicIcon from "@mui/icons-material/Public";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import Link from "next/link";
 
 const Navbar = () => {
-  const [active, setActive] = useState('menu')
+  const [active, setActive] = useState("menu");
 
   return (
     <div className={styles.navbar}>
       <div className={styles.navbar__logo}>
-        <Image src={logo} alt="logo" />
+        <Link href="/" passHref>
+          <Image onClick={() => setActive("menu")} src={logo} alt="logo" />
+        </Link>
       </div>
       <div className={styles.navbar__options}>
         <div className={styles.navbar__options_pages}>
-          <h3 onClick={() => setActive('story')} className={active === 'story' && styles.active}>STORY</h3>
-          <h3  onClick={() => setActive('food')} className={active === 'food' && styles.active}>FOOD</h3>
-          <h3  onClick={() => setActive('locations')} className={active === 'locations' && styles.active}>LOCATIONS</h3>
-          <h3  onClick={() => setActive('menu')} className={active === 'menu' && styles.active} >MENU</h3>
+          <h3
+            onClick={() => setActive("story")}
+            className={active === "story" && styles.active}
+          >
+            <Link href="https://texas-psdigital.vercel.app/story">STORY</Link>
+          </h3>
+          <h3
+            onClick={() => setActive("food")}
+            className={active === "food" && styles.active}
+          >
+            <Link href="/categories">FOOD</Link>
+          </h3>
+          <h3
+            onClick={() => setActive("locations")}
+            className={active === "locations" && styles.active}
+          >
+            <Link href="https://texas-psdigital.vercel.app/locations">
+              LOCATIONS
+            </Link>
+          </h3>
+          {active === "menu" && (
+            <h3
+              onClick={() => setActive("menu")}
+              className={active === "menu" && styles.active}
+            >
+              <Link href="/">MENU</Link>
+            </h3>
+          )}
         </div>
         <div className={styles.navbar__options_icons}>
           <div className={styles.account__icon}>
