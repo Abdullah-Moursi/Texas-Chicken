@@ -1,0 +1,16 @@
+.category__container {
+    display: flex;
+    min-height:100vh;
+}
+
+.category__products {
+    width: 70%;
+    margin-left: 2em;
+
+}
+
+.category__sidebar {
+    width: 20%;
+    background: #F7F7F6;
+}
+
