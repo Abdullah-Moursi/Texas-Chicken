@@ -1,0 +1,36 @@
+.ingredients {
+  text-align: center;
+  min-height: 100vh;
+}
+.ingredients__header {
+    margin-top: 4vh;
+}
+
+.ingredients__header > p {
+    color: #AC9382;
+}
+
+.ingredients__header > h1 {
+    color: #2D2926;
+}
+
+.ingredients__title {
+  margin: 2vh;
+  
+}
+
+.ingredients__icon {
+  border: .2em solid #f5b22e;
+  margin: auto;
+  padding-top: 1.1em;
+  max-width: 3%;
+  min-height: 4vh;
+  border-radius: 50%;
+}
+
+.ingredients__title > p {
+    margin-top: .8rem;
+    font-size: .8rem;
+    font-weight: bold;
+    color: #f5b22e;
+}

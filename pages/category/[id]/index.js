@@ -1,37 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../../../styles/Category.module.css";
 import Product from "../../../components/Product";
 import Sidebar from "../../../components/Sidebar";
-import { useRouter } from "next/router";
 
 const Category = ({ category, categories }) => {
-  const router = useRouter();
-  const {id} = router.query
-  
-
-  // console.log(categories.map(el => el.ID), 'id', id, categories.map(el => el.Name));
-
   return (
     <div className={styles.category__container}>
       <div className={styles.category__sidebar}>
-       <Sidebar categories={categories} />
+        <Sidebar categories={categories} />
       </div>
-      {
-        categories.filter(el => el.ID === id)[0] &&
-        categories.map(el => (
-                   <h1 key={el.Name}>{el.Name}</h1>
-
-        ))
-      }
       <div className={styles.category__products}>
-      <Product category={category}/></div>
+        <Product category={category} />
+      </div>
     </div>
   );
 };
 
-export const getServerSideProps = async (context) => {
+export const getStaticPaths = async () => {
+  const res = await fetch("https://task-api-eosin.vercel.app/api/categories");
+  const data = await res.json();
+
+  const paths = data.map((el) => {
+    return {
+      params: { id: el.ID.toString() },
+    };
+  });
+  return {
+    paths,
+    fallback: false,
+  };
+};
+export const getStaticProps = async (context) => {
+  const id = context.params.id;
   const resCategory = await fetch(
-    `https://task-api-eosin.vercel.app/api/products?catID=${context.params.id}`
+    `https://task-api-eosin.vercel.app/api/products?catID=${id}`
   );
   const category = await resCategory.json();
 
@@ -41,32 +43,9 @@ export const getServerSideProps = async (context) => {
   const categories = await resCategories.json();
 
   return {
-    props: { category, categories },
+    props: { category: category, categories: categories },
   };
 };
-
-
-
-
-// export const getStaticPaths = async () => {
-//   const resCategory = await fetch(
-//     `https://task-api-eosin.vercel.app/api/products`
-//   );
-//   const category = await resCategory.json();
-// const ids = category.map(el => el.id)
-// const paths = ids.map(id => {{
-//   params: {
-//     id: id.toString()
-//   }
-// }})
-// return {
-//   paths, fallback: false
-// }
-
-// const resCategories = await fetch(
-//   "https://task-api-eosin.vercel.app/api/categories"
-// );
-// const categories = await resCategories.json();
-// }
-
 export default Category;
+
+
