@@ -22,7 +22,7 @@ export const getStaticPaths = async () => {
 
   const paths = data.map((el) => {
     return {
-      params: { id: el.ID.toString() },
+      params: { categoryId: el.ID.toString() },
     };
   });
   return {
@@ -31,7 +31,7 @@ export const getStaticPaths = async () => {
   };
 };
 export const getStaticProps = async (context) => {
-  const id = context.params.id;
+  const id = context.params.categoryId;
   const resCategory = await fetch(
     `https://task-api-eosin.vercel.app/api/products?catID=${id}`
   );
@@ -48,4 +48,15 @@ export const getStaticProps = async (context) => {
 };
 export default Category;
 
+// import { useRouter } from 'next/router'
+// import React from 'react'
 
+// const Index = () => {
+//   const router = useRouter();
+//   const { categoryId} = router.query
+//   return (
+//     <div>Index of cat {categoryId}  </div>
+//   )
+// }
+
+// export default Index

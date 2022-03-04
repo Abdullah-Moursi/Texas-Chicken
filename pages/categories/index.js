@@ -8,7 +8,9 @@ const index = ({ categories }) => {
     <div className={styles.categories__container}>
       <div className={styles.categories}>
         {categories.map((category) => (
-          <Link key={category.ID} href="/category/[id]" as={`/category/${category.ID}`} passHref>
+          <Link key={category.ID} 
+          href={`/categories/${category.ID}`}
+           passHref>
             <div className={styles.category}>
               <Image
                 width={250}
@@ -19,7 +21,7 @@ const index = ({ categories }) => {
               />
               <button>{category.Name}</button>
             </div>
-          </Link>
+           </Link>
         ))}
       </div>
     </div>
@@ -38,3 +40,5 @@ export const getStaticProps = async () => {
     },
   };
 };
+
+

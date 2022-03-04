@@ -13,8 +13,7 @@ const Sidebar = ({ categories }) => {
       {categories.map((el) => (
         <Link
           key={el.ID}
-          href="/category/[id]"
-          as={`/category/${el.ID}`}
+          href={`/categories/${el.ID}`}
           passHref
         >
           <div className={styles.sidebar__category}>

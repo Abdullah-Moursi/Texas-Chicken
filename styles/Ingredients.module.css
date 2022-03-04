@@ -34,3 +34,11 @@
     font-weight: bold;
     color: #f5b22e;
 }
+.ingredients__container {
+}
+
+.ingredient {
+margin-left: 40%;
+display: flex;
+  border-bottom: 1px solid #000;
+}
