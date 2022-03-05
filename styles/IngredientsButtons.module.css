@@ -1,0 +1,19 @@
+.button__group {
+    max-height: 4vh;
+}
+#ingredients__button__input {
+    color: #2d2926;
+}
+
+.ingredients__button {
+  color: #2d2926;
+
+  border-radius: 30%;
+  background-color: #f8b02d;
+  border: none;
+}
+
+.ingredients__button:hover {
+  background-color: #f8b02d;
+  border: none;
+}

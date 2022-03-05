@@ -1,0 +1,30 @@
+.cart {
+    margin-top: 5vh;
+    min-height: 80vh; 
+    text-align: center;
+
+}
+
+.cart__container {
+    margin-top: 5vh;
+
+    display: flex;
+}
+
+.cart__contents {
+    width: 60%;
+}
+
+.cart__checkout {
+    width: 20%;
+    background-color: #F5F5F5;
+}
+
+.cart__contents > p {
+cursor: pointer;
+color: #f5b22e;
+}
+
+.cart__contents > p:hover {
+    color: black;
+}
