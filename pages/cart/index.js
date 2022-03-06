@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../styles/Cart.module.css";
 import Link from "next/link";
+import CartContentsTable from "../../components/CartContentsTable";
 
 const Cart = () => {
   return (
@@ -11,6 +12,7 @@ const Cart = () => {
           <Link href="/categories" passHref>
             <p>+Add More Food</p>
           </Link>
+          <CartContentsTable />
         </div>
         <div className={styles.cart__checkout}>
             <h3>PAYMENT SAMMARY</h3>

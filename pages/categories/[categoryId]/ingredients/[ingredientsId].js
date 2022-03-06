@@ -84,15 +84,3 @@ export const getServerSideProps = async (context) => {
     },
   };
 };
-
-// export const getStaticProps = async (context) => {
-//     const {id} = context.params
-//     const res = await fetch(`https://task-api-eosin.vercel.app/api/products?catID=${id}`);
-//     const categories = await res.json();
-
-//     return {
-//       props: {
-//         categories,
-//       },
-//     };
-//   };

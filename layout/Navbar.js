@@ -3,8 +3,8 @@ import styles from "../styles/Navbar.module.css";
 import logo from "../assets/images/logo.png";
 import Image from "next/image";
 import PublicIcon from "@mui/icons-material/Public";
-import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import CartDropdown from '../components/CartDropdown'
 import Link from "next/link";
 
 const Navbar = () => {
@@ -53,7 +53,7 @@ const Navbar = () => {
             <AccountCircleIcon />
           </div>
           <div>
-            <ShoppingBagIcon />
+            <CartDropdown />
           </div>
           <div className={styles.switch__language}>
             <PublicIcon className={styles.switch__language_icon} />

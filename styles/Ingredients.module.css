@@ -37,24 +37,22 @@
   display: flex;
   flex-direction: column;
   margin: 2vh;
-  margin-left: 17vw;
+  margin-left: 15vw;
   width: 50%;
 }
 
 .ingredient {
   padding: 1vh 0;
   margin-left: 40%;
+  align-items: center;
   justify-content: space-between;
-  display: flex;
+  display: grid;
+  grid-template-columns: .6fr 1fr 1fr 1fr;
   border-bottom: 1px solid #e9e8e7;
 }
 
-.navigation__buttons {
-  margin-left: 2vw;
-}
-
 .navigation__button {
-  border-radius: 10%;
+  border-radius: 10px;
   margin: 2vw;
   font-weight: bold;
   color: #2d2926;
