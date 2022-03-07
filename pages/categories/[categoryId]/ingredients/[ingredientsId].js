@@ -7,7 +7,20 @@ import IngredientsButtons from "../../../../components/IngredientsButtons";
 import { Button } from "@mui/material";
 import Link from "next/link";
 
+
+
+
+
+import { useDispatch } from "react-redux";
+import { addCart } from '../../../../redux/action';
+
+
+
+
+
+
 const Ingredients = ({ ingredientsData }) => {
+
   const router = useRouter();
   const { ingredientsId } = router.query;
 
@@ -16,7 +29,24 @@ const Ingredients = ({ ingredientsData }) => {
   });
 
   const data = results[0];
-  console.log(data.Ingridents);
+
+
+
+
+
+
+
+const dispatch = useDispatch();
+const addProduct = (product) => {
+  dispatch(addCart(product))
+  router.push("/cart")
+
+}
+
+
+
+
+
 
   return (
     <div className={styles.ingredients}>
@@ -58,9 +88,22 @@ const Ingredients = ({ ingredientsData }) => {
 
         <Button
         className={styles.navigation__button}
-          // onClick={
+
+
+
+
+        
           //   programatically navigation to cart
-          // }
+
+           onClick={() => addProduct(data)}
+
+
+
+
+
+
+
+
           variant="contained"
         >
           Continue

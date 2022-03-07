@@ -4,12 +4,17 @@ import Product from "../../../components/Product";
 import Sidebar from "../../../components/Sidebar";
 
 const Category = ({ category, categories }) => {
+  const categoryName = categories.filter(
+    (el) => el.ID === category[0].CategoryID
+  )[0].Name;
+
   return (
     <div className={styles.category__container}>
       <div className={styles.category__sidebar}>
         <Sidebar categories={categories} />
       </div>
       <div className={styles.category__products}>
+        <h1>{categoryName}</h1>
         <Product category={category} />
       </div>
     </div>
@@ -46,17 +51,5 @@ export const getStaticProps = async (context) => {
     props: { category: category, categories: categories },
   };
 };
+
 export default Category;
-
-// import { useRouter } from 'next/router'
-// import React from 'react'
-
-// const Index = () => {
-//   const router = useRouter();
-//   const { categoryId} = router.query
-//   return (
-//     <div>Index of cat {categoryId}  </div>
-//   )
-// }
-
-// export default Index

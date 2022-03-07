@@ -8,6 +8,7 @@ import CartDropdown from '../components/CartDropdown'
 import Link from "next/link";
 
 const Navbar = () => {
+
   const [active, setActive] = useState("menu");
 
   return (

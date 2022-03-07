@@ -1,3 +1,27 @@
-#basicmenu {
-    background-color: red;
+.navigation__buttons {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+}
+
+.navigation__button {
+  border-radius: 10px;
+  margin: 0.6vw;
+  font-weight: bold;
+  color: #2d2926;
+  background-color: #f8b02d;
+}
+
+.navigation__button:hover {
+  color: rgb(255, 255, 255);
+  background-color: #2d2926;
+}
+
+.dropdown__empty {
+    padding-left: 1em;
+    min-width: 12vw;
+    min-height: 2.5vh;
+    text-align: left;
+    width: 50%;
+    position: relative;
 }

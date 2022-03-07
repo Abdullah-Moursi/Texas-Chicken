@@ -1,16 +1,22 @@
 .category__container {
-    display: flex;
-    min-height:100vh;
+  display: flex;
+  min-height: 100vh;
 }
 
 .category__products {
-    width: 70%;
-    margin-left: 2em;
+  width: 70%;
+  margin-left: 2em;
+}
 
+.category__products > h1 {
+  padding-top: 1vh;
+  color: #f5b22e;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 3.5rem;
 }
 
 .category__sidebar {
-    width: 20%;
-    background: #F7F7F6;
+  width: 20%;
+  background: #f7f7f6;
 }
-

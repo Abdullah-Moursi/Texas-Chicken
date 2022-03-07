@@ -7,6 +7,7 @@ const Sidebar = ({ categories }) => {
   const router = useRouter();
   const { id } = router.query;
   const [active, setActive] = useState(id);
+  
 
   return (
     <div>
