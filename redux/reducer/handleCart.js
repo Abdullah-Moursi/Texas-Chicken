@@ -4,7 +4,7 @@ const handleCart = (state = cart, action) => {
   const product = action.payload;
   switch (action.type) {
     case "ADDITEM":
-      const exist = state.find((x) => x.ID=== product.ID);
+      const exist = state.find((x) => x.ID === product.ID);
       if (exist) {
         return state.map((x) =>
           x.ID === product.ID
@@ -26,6 +26,13 @@ const handleCart = (state = cart, action) => {
       }
       break;
 
+    case "REMOVE":
+      const exist2 = state.find((x) => x.ID === product.ID);
+      if (exist2.qty >= 1) {
+        return state.filter((x) => x.ID !== exist2.ID);
+      }
+      break;
+
     case "DELITEM":
       const exist1 = state.find((x) => x.ID === product.ID);
       if (exist1.qty === 1) {
@@ -41,7 +48,7 @@ const handleCart = (state = cart, action) => {
         );
       }
       break;
-      
+
     default:
       return state;
       break;

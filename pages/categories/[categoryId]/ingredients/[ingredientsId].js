@@ -7,20 +7,10 @@ import IngredientsButtons from "../../../../components/IngredientsButtons";
 import { Button } from "@mui/material";
 import Link from "next/link";
 
-
-
-
-
 import { useDispatch } from "react-redux";
-import { addCart } from '../../../../redux/action';
-
-
-
-
-
+import { addCart } from "../../../../redux/action";
 
 const Ingredients = ({ ingredientsData }) => {
-
   const router = useRouter();
   const { ingredientsId } = router.query;
 
@@ -30,23 +20,11 @@ const Ingredients = ({ ingredientsData }) => {
 
   const data = results[0];
 
-
-
-
-
-
-
-const dispatch = useDispatch();
-const addProduct = (product) => {
-  dispatch(addCart(product))
-  router.push("/cart")
-
-}
-
-
-
-
-
+  const dispatch = useDispatch();
+  const addProduct = (product) => {
+    dispatch(addCart(product));
+    router.push("/cart");
+  };
 
   return (
     <div className={styles.ingredients}>
@@ -83,27 +61,14 @@ const addProduct = (product) => {
       </div>
       <div className={styles.navigation__buttons}>
         <Link href="/categories" passHref>
-          <Button className={styles.navigation__button} variant="contained">Back</Button>
+          <Button className={styles.navigation__button} variant="contained">
+            Back
+          </Button>
         </Link>
 
         <Button
-        className={styles.navigation__button}
-
-
-
-
-        
-          //   programatically navigation to cart
-
-           onClick={() => addProduct(data)}
-
-
-
-
-
-
-
-
+          className={styles.navigation__button}
+          onClick={() => addProduct(data)}
           variant="contained"
         >
           Continue

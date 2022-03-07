@@ -12,8 +12,9 @@ import Image from "next/image";
 import DeleteForeverRoundedIcon from "@mui/icons-material/DeleteForeverRounded";
 
 import { useDispatch } from "react-redux";
-import { delCart } from "../redux/action";
+import { removeItem } from "../redux/action";
 import { useSelector } from "react-redux";
+import IngredientsButtons from "./CartItemButtons";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -35,9 +36,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 export default function CartContentsTable() {
   const state = useSelector((state) => state.handleCart);
 
+
   const dispatch = useDispatch();
   const delProduct = (product) => {
-    dispatch(delCart(product));
+    dispatch(removeItem(product));
   };
 
   return (
@@ -56,19 +58,44 @@ export default function CartContentsTable() {
           {state.map((row) => (
             <StyledTableRow key={row.Name}>
               <StyledTableCell component="th" scope="row">
-                <DeleteForeverRoundedIcon onClick={() => delProduct(row)} />
-                <Image
-                  src={row.ImagePath}
-                  height={50}
-                  width={50}
-                  alt={row.ID}
-                />
+                <div className={styles.cart__image__section}>
+                  <div className={styles.delete__icon}>
+                    <DeleteForeverRoundedIcon onClick={() => delProduct(row)} />
+                  </div>
+                  <Image
+                    src={row.ImagePath}
+                    height={100}
+                    width={100}
+                    alt={row.ID}
+                  />
+                </div>
               </StyledTableCell>
-              <StyledTableCell align="left">{row.Name}</StyledTableCell>
-              <StyledTableCell align="left">{row.DefaultPrice}</StyledTableCell>
-              <StyledTableCell align="left">{row.qty}</StyledTableCell>
               <StyledTableCell align="left">
-                {row.DefaultPrice * row.qty}
+                <h3> {row.Name}</h3>
+
+                {row.Ingridents.map((ing) => (
+                  <div key={ing.ID} className={styles.cart__ingredients}>
+                    <Image
+                      src={ing.ImagePath}
+                      height={30}
+                      width={30}
+                      alt={ing.Name}
+                    />
+                    <span>
+                      {" "}
+                      {ing.Quantity} {ing.Name}{" "}
+                    </span>
+                  </div>
+                ))}
+              </StyledTableCell>
+              <StyledTableCell align="left">
+                {row.DefaultPrice} SAR
+              </StyledTableCell>
+              <StyledTableCell align="left">
+                <IngredientsButtons quantity={row.qty} product={row} />
+              </StyledTableCell>
+              <StyledTableCell align="left">
+                {(row.DefaultPrice * row.qty).toFixed(2)} SAR
               </StyledTableCell>
             </StyledTableRow>
           ))}

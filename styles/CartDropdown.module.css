@@ -17,11 +17,19 @@
   background-color: #2d2926;
 }
 
-.dropdown__empty {
-    padding-left: 1em;
-    min-width: 12vw;
-    min-height: 2.5vh;
-    text-align: left;
-    width: 50%;
-    position: relative;
+.dropdown__container {
+  padding-left: 1em;
+  min-width: 12vw;
+  min-height: 2.5vh;
+  text-align: left;
+  width: 50%;
+  position: relative;
+}
+
+.dropdown__container > p {
+  padding-bottom: 1vh;
+}
+
+.dropdown__item:hover {
+  cursor: default;
 }

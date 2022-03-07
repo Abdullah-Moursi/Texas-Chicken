@@ -1,0 +1,17 @@
+.cart__ingredients {
+  display: flex;
+}
+
+.cart__ingredients > span {
+  margin-left: 1vw;
+}
+
+.cart__image__section {
+  display: flex;
+  align-items: center;
+}
+
+.delete__icon {
+  cursor: pointer;
+  margin-right: 0.1vw;
+}

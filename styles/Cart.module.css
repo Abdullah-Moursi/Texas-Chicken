@@ -5,9 +5,8 @@
 }
 
 .cart > h1 {
-  color: #2D2926;
+  color: #2d2926;
   font-weight: bolder;
-
 }
 
 .cart__container {
@@ -58,9 +57,9 @@
 
 .navigation__buttons {
   display: flex;
-  
-  position:absolute;
-  bottom:0;
+
+  position: absolute;
+  bottom: 0;
 }
 
 .navigation__button {
@@ -71,7 +70,8 @@
   background-color: #f8b02d;
 }
 
-.navigation__button:hover, .navigation__button__cart:hover {
+.navigation__button:hover,
+.navigation__button__cart:hover {
   color: rgb(255, 255, 255);
   background-color: #2d2926;
 }
@@ -87,4 +87,17 @@
   margin-top: 2vh;
   color: #2d2926;
   background-color: #f8b02d;
+}
+
+.cart__checkout {
+  max-height: 25vh;
+}
+
+.cart__summary > P {
+  margin-top: 1vh;
+  font-size: 1.3rem;
+}
+
+.cart__summary > p > span {
+  font-weight: 500;
 }
