@@ -71,7 +71,7 @@ const Cart = () => {
               className={styles.navigation__button__cart}
               variant="contained"
             >
-              MAKE AN ORDER!
+              MAKE AN ORDER
             </Button>
           </Link>
         </div>
