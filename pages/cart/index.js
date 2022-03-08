@@ -13,7 +13,6 @@ const Cart = () => {
     (previousValue, currentValue) => previousValue + currentValue,
     0
   );
-  console.log(state);
   const deliveryFees = 12;
 
   return (

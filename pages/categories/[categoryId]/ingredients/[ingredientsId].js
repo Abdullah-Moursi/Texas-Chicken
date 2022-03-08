@@ -18,7 +18,6 @@ const Ingredients = ({ ingredientsData }) => {
   const singleProduct = ingredientsData.find((el) => {
     return el.ID == ingredientsId;
   });
-  console.log(currentProduct);
 
   useEffect(() => {
     setCurrProduct(singleProduct);
@@ -44,7 +43,7 @@ const Ingredients = ({ ingredientsData }) => {
       <div className={styles.ingredients__container}>
         {currentProduct?.Ingridents?.map((el) => (
           <>
-            <div className={styles.ingredient}>
+            <div key={el.ID} className={styles.ingredient}>
               <Image
                 key={el.ID}
                 alt={el.Name}
