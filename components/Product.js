@@ -15,7 +15,9 @@ const Product = ({ category }) => {
           passHref
         >
           <div key={el.ID} className={styles.product}>
-            <Image src={el.ImagePath} height={120} width={120} alt={el.Name} />
+            <div className={styles.product__image}>
+            <Image src={el.ImagePath} height={180} width={180} alt={el.Name} />
+            </div>
             <p>
               {el.Name} <span>SAR {el.DefaultPrice}</span>{" "}
             </p>

@@ -1,26 +1,37 @@
 .products {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
+  /* grid-template-columns: repeat(auto-fit, minmax(10em, 16em)); */
+
 }
+
 .product {
-  margin: 1em;
+  margin: 2em 1em;
   height: 20vh;
   cursor: pointer;
 }
 
 .product > P {
   color: #fff;
+  height: 4rem;
   background-color: #9a3324;
   border-radius: 5px;
-  padding: 7px 0 7px 10px;
+  padding: 1rem 0 1rem 1rem;  
+
 }
 
 .product:hover > p {
   background: #f5b22e;
   color: black;
-  padding: 7px 6px 7px 18px;
+  padding: 1rem .9rem 1rem 2rem;
+  font-size: .9rem;
 }
 
 .product > P > span {
-  margin-left: 28%;
+font-weight: 600;
+padding-left: 2vw;
+}
+
+.product__image {
+  text-align: center;
 }

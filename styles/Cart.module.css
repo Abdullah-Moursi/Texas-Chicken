@@ -10,10 +10,8 @@
 }
 
 .cart__container {
-  margin-top: 5vh;
   max-width: 70vw;
-  margin-left: 23vw;
-
+  margin: 5vh 0 3vh 23vw ;
   display: flex;
 }
 

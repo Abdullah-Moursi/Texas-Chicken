@@ -1,12 +1,14 @@
 .categories__container {
-  background: #f0f0f1;
+  background: #f0f0f1;  
+  min-height: 80vh;
+
 }
 
 .categories {
-  padding-top: 3vh;
+  padding: 3vh 0;
   width: 60%;
-  height: 70vh;
   display: flex;
+  flex-wrap: wrap;
   margin: auto;
   justify-content: space-evenly;
 }
@@ -29,4 +31,5 @@
 .category:hover > button {
   color: black;
   background: #f5b22e;
+  cursor: pointer;
 }

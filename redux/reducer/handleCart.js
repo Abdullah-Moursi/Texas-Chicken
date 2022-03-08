@@ -1,13 +1,13 @@
 const cart = [];
 
-const handleCart = (state = cart, action) => {
+const handleCart = (state = cart,  action) => {
   const product = action.payload;
   switch (action.type) {
     case "ADDITEM":
       const exist = state.find((x) => x.ID === product.ID);
       if (exist) {
         return state.map((x) =>
-          x.ID === product.ID
+          x.ID === product.ID && x.ings === product.ings
             ? {
                 ...x,
                 qty: x.qty + 1,
@@ -21,6 +21,7 @@ const handleCart = (state = cart, action) => {
           {
             ...product,
             qty: 1,
+            ings: []
           },
         ];
       }

@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import styles from "../styles/IngredientsButtons.module.css";
 
-const IngredientsButtons = ({ defaultQuantity, MaxQuantity }) => {
+const IngredientsButtons = ({ defaultQuantity, MaxQuantity, ingID, ing }) => {
   const [counter, setCounter] = useState(defaultQuantity);
 
   const handleIncrement = () => {

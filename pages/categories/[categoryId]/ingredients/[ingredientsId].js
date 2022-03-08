@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../../../styles/Ingredients.module.css";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
 import { useRouter } from "next/router";
@@ -6,7 +6,6 @@ import Image from "next/image";
 import IngredientsButtons from "../../../../components/IngredientsButtons";
 import { Button } from "@mui/material";
 import Link from "next/link";
-
 import { useDispatch } from "react-redux";
 import { addCart } from "../../../../redux/action";
 
@@ -52,6 +51,8 @@ const Ingredients = ({ ingredientsData }) => {
               <p> {el.Name} </p>
               <p>SAR {el.Price} </p>
               <IngredientsButtons
+                ing={el}
+                ingID={el.ID}
                 defaultQuantity={el.Quantity}
                 MaxQuantity={el.MaxQuantity}
               />

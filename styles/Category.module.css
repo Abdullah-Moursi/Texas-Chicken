@@ -1,11 +1,15 @@
 .category__container {
   display: flex;
-  min-height: 100vh;
+  min-height: 130vh;
 }
 
 .category__products {
-  width: 70%;
-  margin-left: 2em;
+  width: 90%;
+  margin: 0 1em ;
+
+
+
+
 }
 
 .category__products > h1 {

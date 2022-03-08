@@ -4,11 +4,10 @@ import logo from "../assets/images/logo.png";
 import Image from "next/image";
 import PublicIcon from "@mui/icons-material/Public";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import CartDropdown from '../components/CartDropdown'
+import CartDropdown from "../components/CartDropdown";
 import Link from "next/link";
 
 const Navbar = () => {
-
   const [active, setActive] = useState("menu");
 
   return (
@@ -45,7 +44,7 @@ const Navbar = () => {
               onClick={() => setActive("menu")}
               className={active === "menu" && styles.active}
             >
-              <Link href="/">MENU</Link>
+              <Link href="/">ORDER NOW</Link>
             </h3>
           )}
         </div>

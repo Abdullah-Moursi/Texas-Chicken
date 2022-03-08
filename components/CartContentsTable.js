@@ -83,7 +83,7 @@ export default function CartContentsTable() {
                     />
                     <span>
                       {" "}
-                      {ing.Quantity} {ing.Name}{" "}
+                     x {ing.Quantity} {ing.Name}{" "}
                     </span>
                   </div>
                 ))}

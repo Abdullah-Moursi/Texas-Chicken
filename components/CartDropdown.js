@@ -11,7 +11,6 @@ import Image from "next/image";
 
 export default function BasicMenu() {
   const state = useSelector((state) => state.handleCart);
-  console.log(state);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
