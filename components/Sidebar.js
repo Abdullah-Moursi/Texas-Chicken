@@ -7,16 +7,11 @@ const Sidebar = ({ categories }) => {
   const router = useRouter();
   const { id } = router.query;
   const [active, setActive] = useState(id);
-  
 
   return (
-    <div>
+    <div className={styles.sidebar__container}>
       {categories.map((el) => (
-        <Link
-          key={el.ID}
-          href={`/categories/${el.ID}`}
-          passHref
-        >
+        <Link key={el.ID} href={`/categories/${el.ID}`} passHref>
           <div className={styles.sidebar__category}>
             <p
               className={active === el.ID && styles.active}

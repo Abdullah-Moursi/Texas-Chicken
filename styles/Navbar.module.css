@@ -9,9 +9,9 @@
 }
 
 .navbar__logo {
-  width: 5vw;
+  min-width: 4vw;
+  cursor: pointer;
   margin: auto;
-  margin-left: 25vw;
 }
 
 .navbar__options {
@@ -19,13 +19,14 @@
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  margin-right: 25vw;
 }
 
 .navbar__options_pages {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .navbar__options_pages > h3 {
@@ -41,8 +42,8 @@
   color: #2c2925;
   background: #f5b22e;
   border-radius: 5px;
-  padding: 5px 7px;
-  border: 4px solid #f5b22e;
+  padding: .4em .5em;
+  border: .3em solid #f5b22e;
 }
 
 .navbar__options_icons {
@@ -52,11 +53,11 @@
 
 .navbar__options_icons > div {
   display: flex;
-  padding: 0 2px;
+  padding: 0 .15em;
 }
 
 .navbar__options_icons > div > span {
-  padding-left: 5px;
+  padding-left: .4em;
 }
 
 .switch__language > span:hover {

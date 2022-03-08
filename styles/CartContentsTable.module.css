@@ -8,6 +8,7 @@
 
 .cart__image__section {
   display: flex;
+  min-width: 10vw;
   align-items: center;
 }
 

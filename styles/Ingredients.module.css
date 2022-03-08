@@ -28,8 +28,8 @@
 }
 
 .ingredients__title > p {
-  margin-top: 0.8rem;
-  font-size: 0.8rem;
+  margin-top: 0.8em;
+  font-size: 0.8em;
   font-weight: bold;
   color: #f5b22e;
 }
@@ -47,7 +47,7 @@
   align-items: center;
   justify-content: space-between;
   display: grid;
-  grid-template-columns: .6fr 1fr 1fr 1fr;
+  grid-template-columns: 0.6fr 1fr 1fr 1fr;
   border-bottom: 1px solid #e9e8e7;
 }
 
@@ -62,4 +62,15 @@
 .navigation__button:hover {
   color: rgb(255, 255, 255);
   background-color: #2d2926;
+}
+
+@media screen and (max-width: 900px) {
+  .ingredient {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ingredients__icon {
+    max-width: 9%;
+  }
 }

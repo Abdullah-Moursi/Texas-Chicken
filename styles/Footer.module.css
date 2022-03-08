@@ -9,14 +9,10 @@
   min-height: 30vh;
 }
 
-.footer__backToTop:hover {
-  background-color: #37475a;
-}
-
 .footer__contents {
-  margin: 0px 30px;
+  margin: 0px 2em;
   justify-content: center;
-  padding: 10px;
+  padding: 1em;
   text-align: left;
   display: grid;
   gap: 1em;
@@ -24,7 +20,7 @@
 }
 
 .footer__contents__column {
-  padding: 0 30px;
+  padding: 0 2em;
 }
 
 .footer__contents__column > ul {
@@ -32,7 +28,7 @@
 }
 
 .footer__element {
-  padding: 3px 0;
+  padding: .1em 0;
   cursor: pointer;
   color: #986638;
 }
@@ -43,8 +39,8 @@
 
 .footer__contents__column > ul > h3,
 .footer__contents__column > h3 {
-  padding-top: 10px;
-  padding-bottom: 5px;
+  padding-top: 1rem;
+  padding-bottom: .4rem;
   font-size: medium;
 }
 
@@ -58,11 +54,11 @@
 .social__icon {
   background: #383431;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  margin: 4px;
+  width: 2.2em;
+  height: 2.3em;
+  margin: .2em;
   cursor: pointer;
-  padding: 5px;
+  padding: .33em;
 }
 
 .social__icon:hover {
@@ -70,24 +66,20 @@
 }
 
 .footer__image {
-    transition: all 0.4s ease-in-out;
-
+  transition: all 0.4s ease-in-out;
 }
 
 .footer__image:hover {
-    cursor: pointer;
-    transform: scale(.8);
+  cursor: pointer;
+  transform: scale(0.8);
 }
 .footer__end {
-    padding-top: 10px;
-    margin-top: 10px;
+  padding-top: 1em;
+  margin: 1em 0;
   border-top: 0.1px solid rgb(109, 108, 108);
-
-
 }
 
 .footer__end > p {
-    color: #986638;
-    font-size: smaller;
+  color: #986638;
+  font-size: smaller;
 }
-

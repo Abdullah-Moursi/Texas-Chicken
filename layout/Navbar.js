@@ -14,7 +14,7 @@ const Navbar = () => {
     <div className={styles.navbar}>
       <div className={styles.navbar__logo}>
         <Link href="/" passHref>
-          <Image onClick={() => setActive("menu")} src={logo} alt="logo" />
+          <Image  width={128} height={128} onClick={() => setActive("menu")} src={logo} alt="logo" />
         </Link>
       </div>
       <div className={styles.navbar__options}>

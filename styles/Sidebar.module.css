@@ -3,16 +3,16 @@
 }
 
 .sidebar__category {
-    max-width: 95%;
-    padding: 15px;
+    max-width: 100%;
+    padding: 1em;
     cursor: pointer;
-    border-bottom: .5px solid rgb(194, 194, 194);
+    border-bottom: .1em solid rgb(194, 194, 194);
     color: #9A3324;
     font-weight: bold;
 }
 
 .sidebar__category:hover{
     color: #f5b22e;
-    border-bottom: .5px solid #f5b22e;
+    border-bottom: .1em solid #f5b22e;
 
 }
