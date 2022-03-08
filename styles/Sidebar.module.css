@@ -1,18 +1,17 @@
 .active {
-    color: #f5b22e;
+  color: #f5b22e;
 }
 
 .sidebar__category {
-    max-width: 100%;
-    padding: 1em;
-    cursor: pointer;
-    border-bottom: .1em solid rgb(194, 194, 194);
-    color: #9A3324;
-    font-weight: bold;
+  max-width: 100%;
+  padding: 1em;
+  cursor: pointer;
+  border-bottom: 0.1em solid rgb(194, 194, 194);
+  color: #9a3324;
+  font-weight: bold;
 }
 
-.sidebar__category:hover{
-    color: #f5b22e;
-    border-bottom: .1em solid #f5b22e;
-
+.sidebar__category:hover {
+  color: #f5b22e;
+  border-bottom: 0.1em solid #f5b22e;
 }

@@ -28,7 +28,7 @@
 }
 
 .footer__element {
-  padding: .1em 0;
+  padding: 0.1em 0;
   cursor: pointer;
   color: #986638;
 }
@@ -40,7 +40,7 @@
 .footer__contents__column > ul > h3,
 .footer__contents__column > h3 {
   padding-top: 1rem;
-  padding-bottom: .4rem;
+  padding-bottom: 0.4rem;
   font-size: medium;
 }
 
@@ -56,9 +56,9 @@
   border-radius: 50%;
   width: 2.2em;
   height: 2.3em;
-  margin: .2em;
+  margin: 0.2em;
   cursor: pointer;
-  padding: .33em;
+  padding: 0.33em;
 }
 
 .social__icon:hover {

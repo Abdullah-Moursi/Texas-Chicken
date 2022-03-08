@@ -36,7 +36,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 export default function CartContentsTable() {
   const state = useSelector((state) => state.handleCart);
 
-
   const dispatch = useDispatch();
   const delProduct = (product) => {
     dispatch(removeItem(product));
@@ -83,7 +82,7 @@ export default function CartContentsTable() {
                     />
                     <span>
                       {" "}
-                     x {ing.Quantity} {ing.Name}{" "}
+                      x {ing.Quantity} {ing.Name}{" "}
                     </span>
                   </div>
                 ))}

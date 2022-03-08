@@ -42,8 +42,8 @@
   color: #2c2925;
   background: #f5b22e;
   border-radius: 5px;
-  padding: .4em .5em;
-  border: .3em solid #f5b22e;
+  padding: 0.4em 0.5em;
+  border: 0.3em solid #f5b22e;
 }
 
 .navbar__options_icons {
@@ -53,11 +53,11 @@
 
 .navbar__options_icons > div {
   display: flex;
-  padding: 0 .15em;
+  padding: 0 0.15em;
 }
 
 .navbar__options_icons > div > span {
-  padding-left: .4em;
+  padding-left: 0.4em;
 }
 
 .switch__language > span:hover {

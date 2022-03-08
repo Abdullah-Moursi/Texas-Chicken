@@ -3,15 +3,41 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import styles from "../styles/IngredientsButtons.module.css";
 
-const IngredientsButtons = ({ defaultQuantity, MaxQuantity, ingID, ing }) => {
-  const [counter, setCounter] = useState(defaultQuantity);
+const IngredientsButtons = ({ currentProduct, setCurrProduct, ing }) => {
+  const [counter, setCounter] = useState(1);
+
+  const getUpdatedIngredients = (value) =>
+    currentProduct.Ingridents.map((el) => {
+      if (el.ID === ing.ID) {
+        return {
+          ...el,
+          Quantity: el.Quantity + value,
+        };
+      } else {
+        return el;
+      }
+    });
 
   const handleIncrement = () => {
-    counter < MaxQuantity && setCounter((state) => state + 1);
+    if (counter < ing.MaxQuantity) {
+      setCounter((state) => state + 1);
+      setCurrProduct({
+        ...currentProduct,
+        Ingridents: getUpdatedIngredients(1),
+      });
+    }
   };
+
   const handleDecrement = () => {
-    counter > 0 && setCounter((state) => state - 1);
+    if (counter > 0) {
+      setCounter((state) => state - 1);
+      setCurrProduct({
+        ...currentProduct,
+        Ingridents: getUpdatedIngredients(-1),
+      });
+    }
   };
+
   return (
     <ButtonGroup
       className={styles.button__group}

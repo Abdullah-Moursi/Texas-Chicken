@@ -4,7 +4,6 @@ import styles from "../styles/Product.module.css";
 import Link from "next/link";
 
 const Product = ({ category }) => {
-  
   return (
     <div className={styles.products}>
       {" "}
@@ -16,13 +15,18 @@ const Product = ({ category }) => {
         >
           <div key={el.ID} className={styles.product}>
             <div className={styles.product__image}>
-            <Image src={el.ImagePath} height={180} width={180} alt={el.Name} />
+              <Image
+                src={el.ImagePath}
+                height={180}
+                width={180}
+                alt={el.Name}
+              />
             </div>
             <p>
               {el.Name} <span>SAR {el.DefaultPrice}</span>{" "}
             </p>
           </div>
-         </Link>
+        </Link>
       ))}
     </div>
   );

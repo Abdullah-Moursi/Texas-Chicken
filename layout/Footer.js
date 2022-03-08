@@ -130,7 +130,6 @@ const Footer = () => {
       </div>
       <div className={styles.footer__end}>
         <p>All rights reserved. | Developed & Designed byPSdigital.</p>
-
       </div>
     </footer>
   );

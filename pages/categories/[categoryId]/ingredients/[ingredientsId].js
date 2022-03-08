@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../../../styles/Ingredients.module.css";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
 import { useRouter } from "next/router";
@@ -12,24 +12,28 @@ import { addCart } from "../../../../redux/action";
 const Ingredients = ({ ingredientsData }) => {
   const router = useRouter();
   const { ingredientsId } = router.query;
+  const [currentProduct, setCurrProduct] = useState(null);
+  const dispatch = useDispatch();
 
-  const results = ingredientsData.filter((el) => {
+  const singleProduct = ingredientsData.find((el) => {
     return el.ID == ingredientsId;
   });
+  console.log(currentProduct);
 
-  const data = results[0];
+  useEffect(() => {
+    setCurrProduct(singleProduct);
+  }, [singleProduct]);
 
-  const dispatch = useDispatch();
-  const addProduct = (product) => {
-    dispatch(addCart(product));
+  const addProduct = () => {
+    dispatch(addCart(currentProduct));
     router.push("/cart");
   };
 
   return (
     <div className={styles.ingredients}>
       <div className={styles.ingredients__header}>
-        <h1>{data.Name}</h1>
-        <p>{data.Description}</p>
+        <h1>{currentProduct?.Name}</h1>
+        <p>{currentProduct?.Description}</p>
       </div>
       <div className={styles.ingredients__title}>
         <div className={styles.ingredients__icon}>
@@ -38,7 +42,7 @@ const Ingredients = ({ ingredientsData }) => {
         <p>INGREDIENTS</p>
       </div>
       <div className={styles.ingredients__container}>
-        {data.Ingridents.map((el) => (
+        {currentProduct?.Ingridents?.map((el) => (
           <>
             <div className={styles.ingredient}>
               <Image
@@ -51,10 +55,9 @@ const Ingredients = ({ ingredientsData }) => {
               <p> {el.Name} </p>
               <p>SAR {el.Price} </p>
               <IngredientsButtons
+                currentProduct={currentProduct}
+                setCurrProduct={setCurrProduct}
                 ing={el}
-                ingID={el.ID}
-                defaultQuantity={el.Quantity}
-                MaxQuantity={el.MaxQuantity}
               />
             </div>{" "}
           </>
@@ -69,7 +72,7 @@ const Ingredients = ({ ingredientsData }) => {
 
         <Button
           className={styles.navigation__button}
-          onClick={() => addProduct(data)}
+          onClick={() => addProduct()}
           variant="contained"
         >
           Continue

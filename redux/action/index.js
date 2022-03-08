@@ -1,6 +1,6 @@
 export const addCart = (product) => {
   return {
-    type: "ADDITEM",
+    type: "ADD_ITEM",
     payload: product,
   };
 };
@@ -14,7 +14,7 @@ export const removeItem = (product) => {
 
 export const delCart = (product) => {
   return {
-    type: "DELITEM",
+    type: "DEL_ITEM",
     payload: product,
   };
 };
